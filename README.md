@@ -18,7 +18,8 @@ Com base no trabalho de Machine Learning, não supervisionado, utilizando K-Mean
 •	Cluster 3: homens que não gostam de seus empregos
 •	Cluster 4: funcionários seniores
 •	Cluster 5: pessoas que fazem longos trajetos
- ![image](https://github.com/user-attachments/assets/fea4ed22-e4c7-4a1e-9200-c44be9fc400f)
+           ![image](https://github.com/user-attachments/assets/761ee5ac-6f97-4dda-8e5e-dd7e600f6663)
+
 
 
 
@@ -114,16 +115,18 @@ Análise Geral dos Dados:
 o StandardScaler vai garantir que todas as variáveis tenham uma média de 0 e desvio padrão de 1, o que é especialmente útil para o K-means, já que ele é sensível à escala das variáveis. Assim, o algoritmo poderá identificar clusters com base nas características padronizadas dos funcionários, levando a uma segmentação mais precisa.
 Posteriormente criamos um modelo para determinar qual o numero ideal de clusters esta análise foi feita avaliando a inércia e pontuação de silhueta. Com isso encontramos os gráficos:
 
-![image](https://github.com/user-attachments/assets/fcaa2114-1d1c-4445-8db9-09fc9575abb8)
+![image](https://github.com/user-attachments/assets/d085c577-2f89-4504-847f-0b5826a7152f)
 
-![image](https://github.com/user-attachments/assets/d4719ec4-0a62-4696-b0f1-cd74bdfd59ba)
+![image](https://github.com/user-attachments/assets/6b5156b3-fe73-4c02-a285-57975911d3e5)
 
 
    
 Com base no ponto de inflexão na curva de inércia, conhecido como o "cotovelo" (elbow) e a pontuação de silhueta para diferentes valores de k onde um valor mais alto da pontuação de silhueta sugere que os clusters são mais bem definidos, decidimos iniciar os testes com 4 clusters.
 Treinamos o modelo K-means (Machine Learning não supervisionada) do scikit-learn. Com todos os dados devidamente preparados (ver o arquivo Projeto_RH_CIA-A.ipynb)
 Plotamos um HEATMAP para análise dos Clusteres:
- ![image](https://github.com/user-attachments/assets/ebed1942-b298-4a87-bdb3-fca9288a24f5)
+
+ ![image](https://github.com/user-attachments/assets/83745e0e-66b8-4919-8ff3-9cda53b3b75a)
+
 
 Chegamos as seguintes classificação dos clusters de acordo com o HeatMap:
 * Cluster 0: funcionários juniores, de Produção e Montagem
@@ -140,7 +143,9 @@ Após treinar o modelo de PCA encontramos uma razão de variância baixa, cerca 
 * Componente 2: menor = Comercial, maior = Produção e Montagem
 
 Encontramos que o agrupamento por departamento tem um grande impacto nos dados e fraciona os modelos como se pode ver abaixo. 
-![image](https://github.com/user-attachments/assets/cb457996-01b7-49a7-8031-d927425c23bf)
+
+![image](https://github.com/user-attachments/assets/c8b049e2-4eac-411e-9595-cf108a120065)
+
 
  
 Vamos fazer nova rodada para ver se retirando essa informação do modelo as informações ficam mais homogenias
@@ -150,14 +155,17 @@ Para aprofundar o entendimento dos dados, vamos retirar os departamentos, porque
 
 Então com um novo dataset, sem os departamentos novamente buscamos os gráficos de inércia e de “Silhouette Score”.
  	 
-![image](https://github.com/user-attachments/assets/61e409cc-2eba-4629-b1eb-d48c8fdfb59c)
+![image](https://github.com/user-attachments/assets/8cde72ca-20b7-4e32-a2e4-408b60f45a91)
 
-![image](https://github.com/user-attachments/assets/fdee793c-3717-4e82-8bb1-b8eabc583b62)
+![image](https://github.com/user-attachments/assets/b59e8887-f791-4905-8b18-d97c72a5cfea)
+
 
 A escolha do número ideal de clusters em modelos não supervisionados é um processo iterativo e, em certa medida, subjetivo. Vamos utilizar diversos critérios e métricas para avaliar a qualidade dos agrupamentos, mas a decisão final vai envolver um julgamento profissional, considerando o contexto do problema e o conhecimento do domínio.
 Então foi avaliado três opções:
 1.	3 Clusters:
-![image](https://github.com/user-attachments/assets/062ee9fe-a4aa-4dd9-a26b-10f5b8b31347)
+
+![image](https://github.com/user-attachments/assets/881732f3-0ca5-4e5c-b870-3b5256f8beff)
+
 
  
 O que os clusters dizem:
@@ -168,7 +176,8 @@ O que os clusters dizem:
 
 2.	4 Clusters:
 
-   ![image](https://github.com/user-attachments/assets/5908a418-8691-4fb2-a3e3-2aa82fc3ffa0)
+![image](https://github.com/user-attachments/assets/ffebbf6e-8a8f-4dad-a016-56aaac908100)
+
 
  
 O que os clusters dizem:
@@ -178,8 +187,10 @@ O que os clusters dizem:
 * Cluster 3: Novos Talentos Masculinos
 
 3.	6 Clusters:
- 
- ![image](https://github.com/user-attachments/assets/6476c793-0845-480d-afbb-75cf4921ab2b)
+
+![image](https://github.com/user-attachments/assets/24198014-d2a6-4091-8768-ac46f08f56b4)
+
+
 
 O que os clusters dizem:
 * Cluster 0: homens que gostam de seus empregos
@@ -197,14 +208,18 @@ A ideia é verificar como vai se comportar o PCA sem os departamentos seguindo o
 A nova razão da variância já explica quase 50% dos dados o que é bem superior. E agora já temos os dados bem mais fuidos no gráfico, sem estar separados como o PCA-round1 vamos comparar:
 PCA – Round 1
 
-![image](https://github.com/user-attachments/assets/88ea6f91-8102-4e25-9506-bc5aa1e357a9)
+![image](https://github.com/user-attachments/assets/1df292e2-9bdc-4685-93ab-e60b857827c7)
+
+
 PCA – Round 2
 
-![image](https://github.com/user-attachments/assets/e0471e81-726b-4f0a-8299-29c3443663b0)
+![image](https://github.com/user-attachments/assets/dfac9b9c-4036-40c5-aa2f-a8181b78a9b6)
+
 
 
 Como a visualização agora ficou mais complicada resolvemos também fazer uma plotagem dos dados em 3D.
- ![image](https://github.com/user-attachments/assets/7ac3e3e2-50a0-4bed-9b88-3b346fc5e238)
+![image](https://github.com/user-attachments/assets/87957cbc-766e-47d5-a9db-d6e87ea219cc)
+
 
 
 ### 6. EDA em clusters
