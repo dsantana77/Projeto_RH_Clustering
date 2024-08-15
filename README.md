@@ -1,5 +1,5 @@
 # Projeto_RH_clustering
-Projeto de Machine Learning – Não Supervisionado - Encontrar e Resolver Turn Ove
+Projeto de Machine Learning – Não Supervisionado - Encontrar e Resolver Turn Over
 
 Para melhor vizualização info.docx anexado ao projeto
 
